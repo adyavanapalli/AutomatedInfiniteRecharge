@@ -60,9 +60,9 @@ class Config:
             self.red_player_station_pos = IN_TO_M * np.array([61.00, -314.96])
 
             # Occupancy grid
-            self.occupancy_grid_width = 8.4
-            self.occupancy_grid_height = 16
             self.occupancy_grid_cell_resolution = 0.1
+            self.occupancy_grid_num_cols = int(8.4 / self.occupancy_grid_cell_resolution)
+            self.occupancy_grid_num_rows = int(16 / self.occupancy_grid_cell_resolution)
             self.occupancy_grid_origin = (0, 0)
             self.occupancy_grid_dilation_kernel_size = 13
 
@@ -78,7 +78,7 @@ class Config:
             self.lidar_deadzone_radius = 0.85
 
             # Controls
-            self.drive_kp = 40
+            self.drive_kp = 80
             self.drive_ki = 1
             self.drive_kd = 1
             self.heading_error_threshold = 0.1
